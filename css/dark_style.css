@@ -1,0 +1,26 @@
+* {
+	
+}
+html, body {
+	background-color: #1b1e21 !important;
+}
+#content, body {
+	background-color: darkolivegreen !important;
+
+}
+#content h1, #content h2, #content h3, .zitat{
+	color: gold !important;
+}
+#content {
+	color: #fff !important;
+}
+#content-wrapper .bg-white {
+	background-color: #1b1e21 !important;
+}
+.navbar-nav {
+	background-color: black !important;
+	background-image: none !important;
+}
+.sidebar-brand-text,#content a,.bg-white a, .fa-tachometer-alt,.fa-laugh-wink, .sidebar-dark .nav-item .nav-link:active i, .sidebar-dark .nav-item .nav-link:focus i, .sidebar-dark .nav-item .nav-link:hover i,.copyright   {
+	color: greenyellow !important;
+}
