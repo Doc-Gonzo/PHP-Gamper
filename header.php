@@ -21,10 +21,7 @@ include_once "menu.php";
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <?php
-    $darkStyle = true;
-    if ($darkStyle) {
         echo '<link rel="stylesheet" href="css/dark_style.css">';
-    }
 
     if (isset($_POST['stilwahl'])) {
         $stilwahl =  $_POST["stilwahl"];

@@ -32,7 +32,9 @@ function browserWeiche($user_agent)
         echo "<br/> <br/>", "Edge erkannt";
     }
 }
-
+function author($author) {
+    echo 'Copyright © Your Website ' . $author . date("Y");
+}
 function checkEmail($givenMail)
 {
     $emailString = trim($givenMail);

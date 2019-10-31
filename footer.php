@@ -10,12 +10,11 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span> Copyright &copy; Your Website
+            <span>
                 <?php
                 define ('AUTOR', 'Michael');
                 $autor = 'Michael Gamper ';
-                echo "&nbsp;" . $autor;
-                echo date("Y");
+                author($autor);
                 ?>
 			</span>
         </div>

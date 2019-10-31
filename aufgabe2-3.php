@@ -44,7 +44,9 @@
                     <?php
                     if (isset($_GET['email'])) {
                         $givenMail = $_GET["email"];
-                        checkEmail($givenMail);
+                        if (checkEmail($givenMail) ) {
+                            echo 'Mailadresse ist korrekt';
+                        }
                     };
                     echo "<br/><br/>";
                     ?>
