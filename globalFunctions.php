@@ -73,6 +73,10 @@ function checkName2(&$givenName)
 
 function studentSort(array $studentList, $asc = true)
 {
+    if ( is_array([$studentList]) ){
+        echo 'Prüfung auf Array erfolgreich. </br> </br>';
+    }
+
     if ($asc == true) {
         asort($studentList);
     } else (
@@ -87,6 +91,10 @@ function studentSort(array $studentList, $asc = true)
 
 function studentSortImplode(array $studentList, $asc = true)
 {
+    if ( is_array([$studentList]) ){
+        echo 'Prüfung auf Array erfolgreich. </br> </br>';
+    }
+
     if ($asc == true) {
         asort($studentList);
     } else (

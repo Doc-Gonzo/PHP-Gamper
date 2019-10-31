@@ -43,13 +43,20 @@
                        ';
                     };
                     if (isset($_GET['number1'])) {
-                        $number1 =  $_GET["number1"];
-                        $number2 =  $_GET["number2"];
-                        $number3 =  $_GET["number3"];
-                        $sortableArray = array($number1, $number2,$number3);
-                        rsort($sortableArray);
-                        echo 'Korrekte Reihenfolge: ' . $sortableArray[0] . '  ' . $sortableArray[1] . '  ' . $sortableArray[2];
-                        echo "<br/><br/>";
+
+                        if(is_numeric($_GET['number1']) AND is_numeric($_GET['number2']) AND is_numeric($_GET['number3'])  )
+                        {
+                            $number1 =  $_GET["number1"];
+                            $number2 =  $_GET["number2"];
+                            $number3 =  $_GET["number3"];
+                            $sortableArray = array($number1, $number2,$number3);
+                            rsort($sortableArray);
+                            echo 'Korrekte Reihenfolge: ' . $sortableArray[0] . '  ' . $sortableArray[1] . '  ' . $sortableArray[2];
+                            echo "<br/><br/>";
+                        }
+                        else {
+                            echo 'Sie haben Buchstaben statt Zahlen verwendet. Böser Junge!';
+                        }
                     }
                     ?>
                     <br/><br/>
