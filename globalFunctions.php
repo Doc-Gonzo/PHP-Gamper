@@ -103,7 +103,7 @@ function studentSortImplode(array $studentList, $asc = true)
     echo "<ul><li>" . implode("</li><li>", $studentList) . "</li></ul>";
 }
 
-function addUser($Vorname, $Nachname, $EMail)
+function addUser($Vorname, $Nachname, $EMail,$Password)
 {
 
     $db_link = new mysqli (
@@ -126,19 +126,23 @@ function addUser($Vorname, $Nachname, $EMail)
         $sqleintrag = "
                           INSERT INTO `tabelle1`
                           ( 
-                          `Vorname` , `Nachname` , `E-Mail`
+                          `Vorname` , `Nachname` , `E-Mail`, `passwort`
                           ) 
                           VALUES
                           (
-                          '$VornameStripped', '$NachnameStripped', '$EMailStripped'
+                          '$VornameStripped', '$NachnameStripped', '$EMailStripped', '$Password'
                           );
                         ";
-        $db_erg = mysqli_query($db_link, $sqleintrag)
-        or die("Anfrage fehlgeschlagen: " . mysqli_error());
+        $db_erg = mysqli_query($db_link, $sqleintrag) or ("Anfrage fehlgeschlagen: ". mysqli_error($db_link));
+        // Pruefe ob Mail schon registriert
+        if ( mysqli_errno($db_link)== 1062 ) {
+            echo 'Diese Mailadresse ist bereits registriert. </br> Bitte waehlen Sie eine andere.';
+        }
+        die;
+
     } else {
-        echo 'Ihre Angaben entsprechen nicht dem Standard';
+        echo '</br> Ihre Angaben entsprechen nicht dem Standard';
     }
     exit;
 }
-
 ?>

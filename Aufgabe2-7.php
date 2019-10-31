@@ -24,34 +24,27 @@
                     <!--  CONTENT-->
                     <?php
                     echo '
-                    <h3>Benutzer anlegen:</h3> 
-                    <br/><br/>                    
-                    
-                    <form action="Aufgabe2-7.php" method="POST">
-                        <br/> <br/>
-                        <label for="Vorname">Vorname</label>
-                        <input name="Vorname" type="text">
-                        <label for="Nachname">Nachname</label>
-                        <input name="Nachname" type="text">
-                        <label for="Email">E-Mail</label>
-                        <input name="E-Mail" type="text">
-                        <br/> <br/>
-                        <input type="submit">
-                    </form>
+                        <h3>Benutzer anlegen:</h3> 
+                        <br/><br/>  
                     ';
+                    include 'login_form.php'
                     ?>
                     <?php
                     // Prüfen, ob Kommentardaten zum Speichern vorliegen:
                     if(isset($_POST['Vorname']) and isset($_POST['Nachname'])
-                    and isset($_POST['E-Mail'])) {
+                    and isset($_POST['E-Mail']) and isset($_POST['password_1']) and isset($_POST['password_2'])) {
 
                         $Vorname = $_POST['Vorname'];
                         $Nachname = $_POST['Nachname'];
                         $EMail = $_POST['E-Mail'];
-                        // Test der Datenweitergabe
-                        echo $Vorname . $Nachname . $EMail;
-
-                        addUser($Vorname,$Nachname,$EMail);
+                        $pass1 = $_POST['password_1'];
+                        $pass2 = $_POST['password_2'];
+                        if ($_POST['password_1'] !== $_POST['password_2']) {
+                            echo 'Passwort stimmt nicht überein.';
+                        }
+                        else {
+                            addUser($Vorname, $Nachname, $EMail, $pass1);
+                        }
                     }
                     ?>
                     <!-- CONTENT END -->
