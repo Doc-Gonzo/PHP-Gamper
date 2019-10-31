@@ -25,6 +25,17 @@ include_once "menu.php";
     if ($darkStyle) {
         echo '<link rel="stylesheet" href="css/dark_style.css">';
     }
+
+    if (isset($_POST['stilwahl'])) {
+        $stilwahl =  $_POST["stilwahl"];
+
+        if ($stilwahl == 'bright') {
+            echo '<link rel="stylesheet" href="css/bright_style.css">';
+        }
+    }
+
+
+
     ?>
 
 

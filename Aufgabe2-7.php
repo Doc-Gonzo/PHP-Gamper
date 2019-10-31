@@ -1,14 +1,3 @@
-<!--
-•	Erstelle eine Funktion, die drei Parameter bekommt: den Tag, den Monat und das Jahr.
-•	Die Idee: Die Funktion bekommt ein Geburtsdatum übergeben und errechnet das Alter in Jahren.
-•	Das Alter in Jahren soll zurückgegeben werden.
-•	Erzeuge zum Testen einige Methodenaufrufe im Content-Bereich mit verschiedenen Parametern.
-•	HINWEIS: du wirst mktime() benötigen und mit Timestamps arbeiten müssen. Achte auf das Setzen der richtigen Zeitzone.
-•	Hinweis 2: Überprüfe, ob die Parameter den richtigen Typ haben und nicht leer sind! Verwende dazu Funktionen der Art is_int(), is_array(),... Bemühe dazu die Online-Doku und suche dir die passenden Funktionen
-
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,11 +25,9 @@
                     <?php
                     echo '
                     <h3>Benutzer anlegen:</h3> 
-                    <br/><br/>
-                    ';
-                    ?>
-
-                    <form action="aufgabe2-7.php" method="POST">
+                    <br/><br/>                    
+                    
+                    <form action="Aufgabe2-7.php" method="POST">
                         <br/> <br/>
                         <label for="Vorname">Vorname</label>
                         <input name="Vorname" type="text">
@@ -51,6 +38,8 @@
                         <br/> <br/>
                         <input type="submit">
                     </form>
+                    ';
+                    ?>
                     <?php
                     // Prüfen, ob Kommentardaten zum Speichern vorliegen:
                     if(isset($_POST['Vorname']) and isset($_POST['Nachname'])

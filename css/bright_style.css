@@ -1,0 +1,14 @@
+.navbar-nav, html {
+    background-color: #9fcdff !important;
+    color: #1b1e21 !important;
+}
+.sidebar-dark .nav-item .nav-link {
+    color: #1b1e21 !important;
+}
+#content-wrapper .bg-white {
+    background-color: #1d4b8f !important;
+}
+#content, body {
+    background: lightslategray !important;
+    color: #000 !important;
+}

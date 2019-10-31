@@ -52,12 +52,18 @@
                         echo "<br/><br/>";
                     }
                     ?>
-                    <h3>Studentenliste:</h3>
                     <br/><br/>
+                    <h3>Studentenliste:</h3>
                     <?php
                         echo ("Thomas " . "Peter " . "Patrizia " . "Mathias " . "Juergen " . "Hasan " . "Fabio " . "Deniz <br/> </br/>");
                         $studentenListe = array("Thomas", "Peter", "Patrizia", "Mathias", "Juergen", "Hasan", "Fabio", "Deniz");
+                        echo "Mit Schleife sortiert: ";
+                         echo "<br/><br/>";
                         studentSort($studentenListe);
+                        echo "<br/><br/>";
+                        echo " </br> Mit implode ausgegeben sortiert: ";
+                        studentSortImplode($studentenListe);
+                        echo "<br/><br/>";
                     ?>
                     <!-- CONTENT END -->
                 </div>

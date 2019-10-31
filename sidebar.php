@@ -108,11 +108,10 @@
             <span>Tables</span></a>
     </li>
     <li><div class="style_nav">
-            <form action="" method="GET">
+            <form action="" method="POST">
                 <select name="stilwahl">
-                    <option value="blue">Dark</option>
-                    <option value="red">Bright</option>
-                    <option value="green">Rainbow</option>
+                    <option value="dark">Dark</option>
+                    <option value="bright">Bright</option>
                 </select>
                 <input name="Absenden" type="submit">
             </form>

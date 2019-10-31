@@ -1,3 +1,9 @@
+.main_content ul {
+    width: 100%;
+}
+h3 {
+    width: 100% !important;
+}
 .zitat {
     font-style: italic !important;
     text-align: right !important;
