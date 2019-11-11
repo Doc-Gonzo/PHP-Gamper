@@ -94,7 +94,6 @@ function studentSortImplode(array $studentList, $asc = true)
     if ( is_array([$studentList]) ){
         echo 'Prüfung auf Array erfolgreich. </br> </br>';
     }
-
     if ($asc == true) {
         asort($studentList);
     } else (
@@ -105,7 +104,6 @@ function studentSortImplode(array $studentList, $asc = true)
 
 function addUser($Vorname, $Nachname, $EMail,$Password)
 {
-
     $db_link = new mysqli (
         '127.0.0.1',
         'Matze',
@@ -145,4 +143,19 @@ function addUser($Vorname, $Nachname, $EMail,$Password)
     }
     exit;
 }
+function stilwahl(){
+    echo '
+        <form action="" method="POST">
+                <select name="stilwahl">
+                    <option value="dark">Dark</option>
+                    <option value="bright">Bright</option>
+                </select>
+                <input name="Absenden" type="submit">
+            </form>
+    ';
+};
+function checkStilwahlPost($stilwahl){
+
+};
+
 ?>

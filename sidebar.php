@@ -25,9 +25,7 @@
         <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
-
     </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -87,9 +85,6 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <iframe margin-bottom="40px" width="200" height="100" src="https://www.youtube.com/embed/BaKYvDuiskk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe margin-bottom="40px" width="200" height="100" src="https://www.youtube.com/embed/8j8wIVJ-gr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe margin-bottom="40px" width="200" height="100" src="https://www.youtube.com/embed/zWylUZub5KM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
             </div>
         </div>
     </li>
@@ -108,13 +103,9 @@
             <span>Tables</span></a>
     </li>
     <li><div class="style_nav">
-            <form action="" method="POST">
-                <select name="stilwahl">
-                    <option value="dark">Dark</option>
-                    <option value="bright">Bright</option>
-                </select>
-                <input name="Absenden" type="submit">
-            </form>
+            <?php
+                stilwahl();
+            ?>
         </div></li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

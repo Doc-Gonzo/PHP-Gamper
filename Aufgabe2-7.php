@@ -39,6 +39,7 @@
                         $EMail = $_POST['E-Mail'];
                         $pass1 = $_POST['password_1'];
                         $pass2 = $_POST['password_2'];
+                        // Pruefe Passwort
                         if ($_POST['password_1'] !== $_POST['password_2']) {
                             echo 'Passwort stimmt nicht überein.';
                         }

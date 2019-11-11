@@ -20,16 +20,30 @@ require_once "menu.php";
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+
+
     <?php
-        echo '<link rel="stylesheet" href="css/dark_style.css">';
+
+        $stilwahl = $_COOKIE["cookie_stilwahl"];
 
     if (isset($_POST['stilwahl'])) {
         $stilwahl =  $_POST["stilwahl"];
 
-        if ($stilwahl == 'bright') {
+        if($stilwahl == 'bright'){
+            setcookie("cookie_stilwahl","bright",time()+(3600*24));
+        }
+        else{
+            setcookie("cookie_stilwahl","dark",time()+(3600*24));
+        };
+    }
+
+        if ($stilwahl == "bright") {
             echo '<link rel="stylesheet" href="css/bright_style.css">';
         }
-    }
+        else {
+            echo'<link rel="stylesheet" href="css/dark_style.css">';
+        }
+
     ?>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
