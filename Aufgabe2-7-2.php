@@ -24,30 +24,23 @@
                     <!--  CONTENT-->
                     <?php
                     echo '
-                        <h3>Benutzer anlegen:</h3> 
+                        <h3>Einloggen:</h3> 
                         <br/><br/>  
                     ';
-                    include 'register_form.php'
-                    ?>
-                    <?php
-                    // Prüfen, ob Kommentardaten zum Speichern vorliegen:
-                    if(isset($_POST['Vorname']) and isset($_POST['Nachname'])
-                    and isset($_POST['E-Mail']) and isset($_POST['password_1']) and isset($_POST['password_2'])) {
-
-                        $Vorname = $_POST['Vorname'];
-                        $Nachname = $_POST['Nachname'];
-                        $EMail = $_POST['E-Mail'];
-                        $pass1 = $_POST['password_1'];
-                        $pass2 = $_POST['password_2'];
-                        // Pruefe Passwort
-                        if ($_POST['password_1'] !== $_POST['password_2']) {
-                            echo 'Passwort stimmt nicht überein.';
-                        }
-                        else {
-                            $pass_hashed = hash_password($pass1);
-                            addUser($Vorname, $Nachname, $EMail, $pass_hashed);
-                        }
+                    // Zeige Formular nur wenn keien Daten übergeben wrrden
+                    if(!isset($_POST['email_login']) and !isset($_POST['password_login'])) {
+                        include 'login_form.php';
                     }
+                    // Prüfe Hash
+                    if(isset($_POST['email_login']) and isset($_POST['password_login'])) {
+                       $pass = $_POST['password_login'];
+                       $mail =  $_POST['email_login'];
+                        echo 'Beide Werte übergeben';
+                       login($pass,$mail);
+                        echo 'Funktion fertig';
+
+                    }
+                    else { echo 'Nicht beide Werte übergeben';}
                     ?>
                     <!-- CONTENT END -->
                 </div>

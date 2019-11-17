@@ -23,8 +23,12 @@ require_once "menu.php";
 
 
     <?php
-
+    if (isset($_COOKIE['cookie_stilwahl'])) {
         $stilwahl = $_COOKIE["cookie_stilwahl"];
+    }
+    else{
+        $stilwahl = 'dark';
+    }
 
     if (isset($_POST['stilwahl'])) {
         $stilwahl =  $_POST["stilwahl"];

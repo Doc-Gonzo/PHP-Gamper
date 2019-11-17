@@ -141,6 +141,7 @@ function addUser($Vorname, $Nachname, $EMail,$Password)
     } else {
         echo '</br> Ihre Angaben entsprechen nicht dem Standard';
     }
+    $db_link->close();
     exit;
 }
 function stilwahl(){
@@ -157,5 +158,27 @@ function stilwahl(){
 function checkStilwahlPost($stilwahl){
 
 };
+function hash_password($pass_unhased) {
+    $pass_hashed = 'Argon2i hash: ' . password_hash($pass_unhased, PASSWORD_ARGON2I);
+    return $pass_hashed;
+}
 
+function login($password_login, $email_login)
+{
+    $db_link = new mysqli (
+        '127.0.0.1',
+        'Matze',
+        'php',
+        'gamper_aufgaben'
+    );
+    echo 'Datenbankanbindung paast';
+    if (!$db_link) {
+        echo 'NOT CONNECTED';
+    }
+    $query = $db_link->query("SELECT passwort FROM = 'tabelle1' WHERE 'email'  == '$email_login'");
+
+    echo 'Ergebnis: ' . $query;
+
+    $db_link->close();
+}
 ?>
